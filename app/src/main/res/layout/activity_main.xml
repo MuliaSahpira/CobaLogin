@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="16dp"
+    android:background="#ECF2FF"
     tools:context=".MainActivity">
 
     <TextView
@@ -23,16 +24,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="xxxxxxxxxx"
-        android:gravity="clip_horizontal"
+        android:gravity="center_horizontal"
         android:textSize="20sp"
         />
 
     <Button
+        android:id="@+id/btn_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="LOGOUT"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_marginTop="30dp"
+        android:backgroundTint="#E3DFFD"
         android:onClick="prosesLogout"
         />
 
