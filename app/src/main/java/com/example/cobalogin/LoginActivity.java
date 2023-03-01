@@ -43,11 +43,17 @@ public class LoginActivity extends AppCompatActivity {
                     etPassword.setError("Password Tidak Boleh Kosong!");
                 }
                 else {
-                    if (username.equals("muliashpra") && password.equals("0909")){
+                    if (username.equals("liashpra") && password.equals("0909")){
                         KL.setPref(LoginActivity.this, MainActivity.keySPusername, username);
+                        KL.setPref(LoginActivity.this, MainActivity.keySPname, "Mulia Sahpira");
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         finish();
-                    }else {
+                    } else if (username.equals("yj") && password.equals("1313")) {
+                        KL.setPref(LoginActivity.this, MainActivity.keySPusername, username);
+                        KL.setPref(LoginActivity.this, MainActivity.keySPname, "yeonjun_txt");
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
+                    } else {
                         Toast.makeText(LoginActivity.this, "Username atau Password Belum Tepat", Toast.LENGTH_SHORT).show();
                     }
                 }
