@@ -29,16 +29,40 @@ public class LoginActivity extends AppCompatActivity {
     {
         username = etUsername.getText().toString();
         password = etPassword.getText().toString();
+        btnLogin = findViewById(R.id.btn_login);
 
-        if (username.equals("admin") && password.equals("admin"))
-        {
-            KL.setPref(LoginActivity.this, "spPadang", username);
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-            finish();
-        }
-        else
-        {
-            Toast.makeText(this, "Login Gagal", Toast.LENGTH_SHORT).show();
-        }
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                username = etUsername.getText().toString();
+                password = etPassword.getText().toString();
+
+                if (username.trim().equals("")){
+                    etUsername.setError("Username Tidak Boleh Kosong!");
+                } else if (password.trim().equals("")) {
+                    etPassword.setError("Password Tidak Boleh Kosong!");
+                }
+                else {
+                    if (username.equals("muliashpra") && password.equals("0909")){
+                        KL.setPref(LoginActivity.this, MainActivity.keySPusername, username);
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
+                    }else {
+                        Toast.makeText(LoginActivity.this, "Username atau Password Belum Tepat", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+
+//        if (username.equals("muliashpra") && password.equals("0909"))
+//        {
+//            KL.setPref(LoginActivity.this, "spPadang", username);
+//            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//            finish();
+//        }
+//        else
+//        {
+//            Toast.makeText(this, "Login Gagal", Toast.LENGTH_SHORT).show();
+//        }
     }
 }
