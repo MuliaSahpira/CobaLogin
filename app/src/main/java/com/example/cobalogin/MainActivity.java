@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
         {
             setContentView(R.layout.activity_main);
 
+//            tvSesi = findViewById(R.id.tv_sesi);
+//            tvSesi.setText(KL.getPref(MainActivity.this, keySPusername));
+
             ambilSesi = KL.getPref(MainActivity.this, keySPusername);
             tvSesi = findViewById(R.id.tv_sesi);
             tvSesi.setText(ambilSesi);
